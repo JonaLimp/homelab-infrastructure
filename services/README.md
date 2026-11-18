@@ -49,4 +49,19 @@ cp services/radarr/radarr.container ~/.config/containers/systemd/
 systemctl --user daemon-reload
 systemctl --user restart radarr.service
 ```
-```
+
+
+## Network Binding and Security
+
+The repository definitions bind service ports to `127.0.0.1` by default.
+This limits direct access to applications to the host itself.
+
+For LAN access, change the host IP in the relevant `PublishPort` setting
+to the intended private LAN address. Do not use `0.0.0.0` unless exposing
+the service on all host interfaces is intentional.
+
+The active deployment may use different bind addresses. Review firewall
+rules and access requirements before changing a live service.
+
+The LinuxServer.io containers use `PUID` and `PGID` environment variables.
+Adjust these values to match the user and group IDs on the target host.

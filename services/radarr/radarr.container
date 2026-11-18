@@ -5,7 +5,7 @@ Description=Radarr Movie Management
 Image=lscr.io/linuxserver/radarr:latest
 ContainerName=radarr
 Network=homelab-media
-PublishPort=192.168.111.32:7878:7878
+PublishPort=127.0.0.1:7878:7878
 Environment=PUID=1000
 Environment=PGID=1000
 Environment=TZ=Europe/Berlin

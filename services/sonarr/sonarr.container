@@ -9,7 +9,7 @@ Image=lscr.io/linuxserver/sonarr:latest
 ContainerName=sonarr
 
 Network=homelab-media
-PublishPort=192.168.111.32:8989:8989
+PublishPort=127.0.0.1:8989:8989
 
 Environment=PUID=1000
 Environment=PGID=1000

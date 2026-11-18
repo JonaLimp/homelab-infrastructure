@@ -4,7 +4,7 @@ Description=Jellyfin Media Server
 [Container]
 Image=docker.io/jellyfin/jellyfin:latest
 ContainerName=jellyfin
-PublishPort=8096:8096
+PublishPort=127.0.0.1:8096:8096
 UserNS=keep-id
 Volume=%h/homelab/jellyfin/config:/config:Z
 Volume=%h/homelab/jellyfin/cache:/cache:Z

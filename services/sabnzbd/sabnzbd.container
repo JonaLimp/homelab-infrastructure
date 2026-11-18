@@ -4,7 +4,7 @@ Description=SABnzbd Usenet Downloader
 [Container]
 Image=lscr.io/linuxserver/sabnzbd:latest
 ContainerName=sabnzbd
-PublishPort=192.168.111.32:8081:8080
+PublishPort=127.0.0.1:8081:8080
 Environment=PUID=1000
 Environment=PGID=1000
 Environment=TZ=Europe/Berlin
