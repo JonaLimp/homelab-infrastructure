@@ -1,9 +1,5 @@
 repos:
-  - repo: local
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
     hooks:
       - id: gitleaks
-        name: Detect secrets with Gitleaks
-        entry: gitleaks git --staged --redact --verbose
-        language: system
-        pass_filenames: false
-        always_run: true
