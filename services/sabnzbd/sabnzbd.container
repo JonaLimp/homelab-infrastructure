@@ -1,0 +1,19 @@
+[Unit]
+Description=SABnzbd Usenet Downloader
+
+[Container]
+Image=lscr.io/linuxserver/sabnzbd:latest
+ContainerName=sabnzbd
+PublishPort=127.0.0.1:8081:8080
+Environment=PUID=1000
+Environment=PGID=1000
+Environment=TZ=Europe/Berlin
+Volume=%h/homelab/usenet/config:/config:Z
+Volume=%h/homelab/usenet/downloads:/downloads:z
+Network=homelab-media
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

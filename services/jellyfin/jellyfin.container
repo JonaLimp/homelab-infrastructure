@@ -1,0 +1,18 @@
+[Unit]
+Description=Jellyfin Media Server
+
+[Container]
+Image=docker.io/jellyfin/jellyfin:latest
+ContainerName=jellyfin
+PublishPort=127.0.0.1:8096:8096
+UserNS=keep-id
+Volume=%h/homelab/jellyfin/config:/config:Z
+Volume=%h/homelab/jellyfin/cache:/cache:Z
+Volume=%h/Movies:/media:ro,z
+Volume=%h/TV:/tv:ro,z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
