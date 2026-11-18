@@ -1,0 +1,27 @@
+
+[Unit]
+Description=Sonarr TV series manager
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=lscr.io/linuxserver/sonarr:latest
+ContainerName=sonarr
+
+Network=homelab-media
+PublishPort=192.168.111.32:8989:8989
+
+Environment=PUID=1000
+Environment=PGID=1000
+Environment=TZ=Europe/Berlin
+
+Volume=%h/homelab/sonarr/config:/config:z
+Volume=%h/homelab/usenet/downloads:/downloads:z
+Volume=%h/TV:/tv:z
+
+[Service]
+Restart=on-failure
+TimeoutStartSec=300
+
+[Install]
+WantedBy=default.target
